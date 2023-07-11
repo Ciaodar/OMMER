@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ommer/AdminPages/PanelPage.dart';
 import 'package:ommer/AuthPages/LoginPage.dart';
 import 'package:ommer/AuthPages/RegisterPage.dart';
 import 'package:ommer/CustomerPages/CartPage.dart';
@@ -7,7 +8,7 @@ import 'package:ommer/DatabaseConnection.dart';
 import 'package:ommer/Objects/Product.dart';
 import 'package:ommer/Objects/User.dart';
 import 'package:provider/provider.dart';
-import 'AdminPages/panelPage.dart';
+import 'AdminPages/addRezPage.dart';
 import 'AdminPages/qrScan.dart';
 import 'CustomerPages/CategoryPage.dart';
 import 'CustomerPages/homePage.dart';
@@ -54,8 +55,9 @@ class LoginApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
         '/home': (context) => Homepage(),
-        '/panel': (context) => AddReservationPanel(),
-        '/liveqr': (context)=> LiveDecodePage(),
+        '/panel': (context) => PanelPage(),
+        '/panel/rez': (context) => AddReservationPanel(),
+        '/panel/rez/liveqr': (context)=> LiveDecodePage(),
         '/categories': (context)=> CategoryPage(),
         '/categories/cart': (context)=> Cart(),
       },

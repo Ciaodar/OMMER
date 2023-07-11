@@ -5,6 +5,10 @@ class User with ChangeNotifier {
 
   String? _qrUid;
   String? _uid;
+  String? _roomid;
+
+
+
   String? _name;
   String? _mail;
   String? _password;
@@ -18,9 +22,17 @@ class User with ChangeNotifier {
 
   //User.name(this._uid,this._qrUid, this._name, this._mail, this._password, this._role,this.checkedIn);
 
+
+  String? get roomid => _roomid;
+
+  set roomid(String? value) {
+    _roomid = value;
+  }
+
   bool get checkedIn => _checkedIn;
   set checkedIn(bool value) {
     _checkedIn = value;
+    notifyListeners();
   }
 
   String? get qrUid => _qrUid;
@@ -68,9 +80,14 @@ class User with ChangeNotifier {
     _password=null;
     _role=null;
     _checkedIn=false;
+    _roomid=null;
+    notifyListeners();
   }
 
-  void updateUserInfo({String? uid,String? qrUid, String? name, String? mail, String? password, int? role, bool? checkedIn}) {
+  void updateUserInfo({String? roomid,String? uid,String? qrUid, String? name, String? mail, String? password, int? role, bool? checkedIn}) {
+    if (roomid != null) {
+      _roomid = roomid;
+    }
     if (qrUid != null) {
       _qrUid = qrUid;
     }

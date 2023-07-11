@@ -5,6 +5,8 @@ import 'package:qr_code_dart_scan/qr_code_dart_scan.dart';
 import '../Objects/User.dart';
 
 class LiveDecodePage extends StatefulWidget {
+  const LiveDecodePage({super.key});
+
   @override
   _LiveDecodePageState createState() => _LiveDecodePageState();
 }
@@ -16,7 +18,7 @@ class _LiveDecodePageState extends State<LiveDecodePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(1, 1, 1, 0.01),
+        backgroundColor: const Color.fromRGBO(1, 1, 1, 0.01),
       ),
       body: QRCodeDartScanView(
         widthPreview: MediaQuery.of(context).size.width,
@@ -26,14 +28,14 @@ class _LiveDecodePageState extends State<LiveDecodePage> {
           showDialog(
             context: context,
             builder: (BuildContext context) {
+              Navigator.of(context).pop();
               return AlertDialog(
-                title: Text('Success'),
-                content: Text('User Found.'),
+                title: const Text('Success'),
+                content: const Text('User Found.'),
                 actions: <Widget>[
                   ElevatedButton(
-                    child: Text('OK'),
+                    child: const Text('OK'),
                     onPressed: () {
-                      Navigator.of(context).pop();
                       Navigator.of(context).pop();
                     },
                   ),
@@ -49,8 +51,8 @@ class _LiveDecodePageState extends State<LiveDecodePage> {
         child: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),

@@ -76,7 +76,7 @@ class CategoryPageState extends State<CategoryPage> {
           backgroundColor: const Color.fromRGBO(57, 31, 15, 1),
         ),
         body: Container(
-          padding: const EdgeInsets.only(top: 40),
+          //padding: const EdgeInsets.only(),
           alignment: Alignment.center,
           decoration: const BoxDecoration(
             image: DecorationImage(image: AssetImage('asst/drinksback.png'),fit: BoxFit.fitHeight,)
@@ -93,6 +93,7 @@ class CategoryPageState extends State<CategoryPage> {
                 // Get the category at the current index
                 String category = categories[index].catname;
                 return Container(
+                  margin: EdgeInsets.only(top: 20),
                   child: Column(
                       children: [
                         InkWell(
@@ -157,7 +158,7 @@ class CategoryPageState extends State<CategoryPage> {
 
                         categories[index].isextended?
                         Container(
-                          margin: const EdgeInsets.only(bottom: 20,top: 1),
+                          margin: const EdgeInsets.only(top: 1),
                           child: Column(
                             children: [
                               Container(
@@ -239,8 +240,8 @@ class CategoryPageState extends State<CategoryPage> {
                               ),
                             ],
                           ),
-                        ):const SizedBox(width: 10,height: 10,),
-                        const SizedBox(width: 10,height: 10,),
+                        ):const SizedBox(),
+                        const SizedBox(width: 10,height: 5,),
                       ]
                   ),
                 );

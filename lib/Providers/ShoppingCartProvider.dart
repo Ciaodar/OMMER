@@ -16,8 +16,29 @@ class ShoppingCartProvider with ChangeNotifier{
     }
     return total;
   }
+
+
+  void resetCart(){
+    cartList=[];
+    notifyListeners();
+  }
+
+
   void removeProduct(int index){
     cartList.removeAt(index);
     notifyListeners();
   }
+
+/*
+  Iterable<List<Object?>> toQuery(String oid){
+    Iterable<List<Object?>> ret=[[]];
+    int c=0;
+    for (Product prd in cartList){
+      ret.elementAt(c).addAll([oid,prd.pid]);
+      c++;
+    }
+    return ret;
+  }
+
+ */
 }
